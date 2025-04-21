@@ -1,0 +1,77 @@
+{
+    "displayName": "Testing Dashboard",
+    "dashboardFilters": [],
+    "labels": {},
+    "mosaicLayout": {
+      "columns": 48,
+      "tiles": [
+        {
+          "xPos": 24,
+          "height": 16,
+          "width": 24,
+          "widget": {
+            "title": "Test Widget",
+            "id": "",
+            "text": {
+              "content": "Test Widget",
+              "format": "MARKDOWN",
+              "style": {
+                "backgroundColor": "#FFFFFF",
+                "fontSize": "FS_LARGE",
+                "horizontalAlignment": "H_LEFT",
+                "padding": "P_EXTRA_SMALL",
+                "pointerLocation": "POINTER_LOCATION_UNSPECIFIED",
+                "textColor": "#212121",
+                "verticalAlignment": "V_TOP"
+              }
+            }
+          }
+        },
+        {
+          "yPos": 16,
+          "height": 16,
+          "width": 24,
+          "widget": {
+            "title": "Global - Bytes streamed into log buckets [SUM]",
+            "id": "",
+            "xyChart": {
+              "chartOptions": {
+                "displayHorizontal": false,
+                "mode": "COLOR",
+                "showLegend": false
+              },
+              "dataSets": [
+                {
+                  "breakdowns": [],
+                  "dimensions": [],
+                  "legendTemplate": "",
+                  "measures": [],
+                  "minAlignmentPeriod": "60s",
+                  "plotType": "LINE",
+                  "targetAxis": "Y1",
+                  "timeSeriesQuery": {
+                    "outputFullDuration": false,
+                    "timeSeriesFilter": {
+                      "aggregation": {
+                        "alignmentPeriod": "60s",
+                        "crossSeriesReducer": "REDUCE_SUM",
+                        "groupByFields": [],
+                        "perSeriesAligner": "ALIGN_RATE"
+                      },
+                      "filter": "metric.type=\"logging.googleapis.com/billing/bytes_ingested\" resource.type=\"global\""
+                    },
+                    "unitOverride": ""
+                  }
+                }
+              ],
+              "thresholds": [],
+              "yAxis": {
+                "label": "",
+                "scale": "LINEAR"
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
